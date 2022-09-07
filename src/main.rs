@@ -1,7 +1,21 @@
 use rusty_engine::prelude::*;
 
 struct GameState {
-    health_left: i32,
+    high_score: u32,
+    current_score: u32,
+    enemy_labels: Vec<String>,
+    spawn_timer: Timer,
+}
+
+impl Default for GameState {
+    fn default() -> Self {
+        Self {
+            high_score: 0,
+            current_score: 0,
+            enemy_labels: Vec::new(),
+            spawn_timer: Timer::from_seconds(1.0, false), 
+        }
+    }
 }
 
 fn main() {
@@ -9,5 +23,5 @@ fn main() {
 
     println!("Hello, world!");
 
-    game.run(GameState { health_left: 42 });
+    game.run(GameState::default());
 }
