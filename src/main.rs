@@ -1,6 +1,6 @@
-use log::{debug, error, info, trace, warn};
+use log::debug;
 use rand::prelude::*;
-use rusty_engine::{mouse, prelude::*};
+use rusty_engine::prelude::*;
 
 struct GameState {
     high_score: u32,
